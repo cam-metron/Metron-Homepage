@@ -1,0 +1,403 @@
+<!-- 
+  APEX RATIO CO. — landing page
+  Paste this whole block into a Squarespace Code Block (Edit Page → Add Block → Code).
+  Everything (styles, layout, the gear graphic) is self-contained in this one snippet.
+  Swap the placeholder business name, copy, email and phone number for your own — 
+  search for "Apex Ratio Co.", "hello@example.com" and "+61" to find them quickly.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+  .arc-page {
+    --navy: #10223A;
+    --navy-mid: #1B3A5C;
+    --line: #E7ECEF;
+    --paper: #F1EEE4;
+    --steel: #7C8A96;
+    --orange: #DD6A2E;
+    --radius: 2px;
+
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--line);
+    background: var(--navy);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .arc-page * { box-sizing: border-box; }
+  .arc-page h1, .arc-page h2, .arc-page h3 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
+    margin: 0;
+  }
+  .arc-section {
+    padding: 88px 24px;
+    border-bottom: 1px solid rgba(231,236,239,0.12);
+  }
+  .arc-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .arc-eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .arc-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: 3px 10px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+  .arc-rule { flex: 1; height: 1px; background: rgba(231,236,239,0.2); }
+  .arc-lede {
+    max-width: 62ch;
+    font-size: 18px;
+    color: var(--steel);
+  }
+
+  /* HERO */
+  .arc-hero {
+    padding-top: 72px;
+    padding-bottom: 64px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .arc-hero h1 {
+    font-size: clamp(46px, 7vw, 84px);
+  }
+  .arc-hero-sub {
+    margin-top: 24px;
+    font-size: 19px;
+    max-width: 46ch;
+    color: var(--line);
+  }
+  .arc-hero-meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .arc-meta-item { font-size: 14px; color: var(--steel); }
+  .arc-meta-item b { display: block; color: var(--line); font-size: 15px; font-weight: 600; }
+  .arc-cta-row { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .arc-btn {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 26px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .arc-btn-primary { background: var(--orange); color: #1A1006; }
+  .arc-btn-ghost { border-color: rgba(231,236,239,0.4); color: var(--line); }
+
+  /* GEAR GRAPHIC */
+  .arc-gear-wrap { position: relative; display: flex; justify-content: center; }
+  .arc-gear-wrap svg { width: 100%; max-width: 380px; height: auto; }
+  .arc-dim-text { font-family: 'Inter', sans-serif; font-size: 11px; fill: var(--steel); letter-spacing: 0.03em; }
+  .arc-dim-line { stroke: var(--steel); stroke-width: 1; }
+  .arc-gear-fill { fill: none; stroke: var(--line); stroke-width: 2; }
+  .arc-gear-accent { fill: var(--orange); }
+
+  /* PROCESS */
+  .arc-process-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(231,236,239,0.14);
+  }
+  .arc-process-cell {
+    background: var(--navy);
+    padding: 28px 24px;
+  }
+  .arc-step-no {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 15px;
+    color: var(--orange);
+    font-weight: 700;
+  }
+  .arc-process-cell h3 { font-size: 22px; margin-top: 10px; }
+  .arc-process-cell p { margin-top: 10px; color: var(--steel); font-size: 15px; }
+
+  /* SPEC TABLE — paper section */
+  .arc-paper {
+    background: var(--paper);
+    color: var(--navy);
+    border-bottom: 1px solid rgba(16,34,58,0.1);
+  }
+  .arc-paper .arc-lede { color: #4A5560; }
+  .arc-paper .arc-tag { color: var(--navy-mid); border-color: var(--navy-mid); }
+  .arc-paper .arc-rule { background: rgba(16,34,58,0.15); }
+  table.arc-spec {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 36px;
+    font-size: 15px;
+  }
+  table.arc-spec th, table.arc-spec td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(16,34,58,0.15);
+  }
+  table.arc-spec th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--navy-mid);
+  }
+  table.arc-spec td.mono { font-variant-numeric: tabular-nums; }
+  .arc-spec-note { margin-top: 16px; font-size: 13px; color: #6B7580; }
+
+  /* MARKETS */
+  .arc-markets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 44px; }
+  .arc-market h3 { font-size: 26px; }
+  .arc-market p { margin-top: 8px; color: var(--steel); font-size: 15px; }
+
+  /* CONTACT */
+  .arc-contact { text-align: left; }
+  .arc-contact h2 { font-size: clamp(38px, 6vw, 60px); }
+  .arc-contact-row {
+    margin-top: 36px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .arc-contact-item a { color: var(--line); text-decoration: none; border-bottom: 1px solid var(--orange); }
+  .arc-contact-item .label { display: block; font-size: 13px; color: var(--steel); margin-bottom: 4px; }
+  .arc-foot {
+    padding: 28px 24px;
+    font-size: 13px;
+    color: var(--steel);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 780px) {
+    .arc-hero { grid-template-columns: 1fr; }
+    .arc-gear-wrap { order: -1; }
+    .arc-process-grid { grid-template-columns: 1fr; }
+    .arc-markets { grid-template-columns: 1fr; gap: 28px; }
+  }
+</style>
+
+<div class="arc-page">
+
+  <!-- HERO -->
+  <section class="arc-section arc-hero" style="border-bottom:none;">
+    <div>
+      <div class="arc-eyebrow-row">
+        <span class="arc-tag">Melbourne, AU</span>
+        <div class="arc-rule"></div>
+      </div>
+      <h1>Every ratio,<br>cut to spec.</h1>
+      <p class="arc-hero-sub">
+        Precision gear sets for Formula Ford gearboxes, machined to order and
+        heat-treated to race hardness. One car's worth or a whole grid's.
+      </p>
+      <div class="arc-hero-meta">
+        <div class="arc-meta-item"><b>±0.01mm</b>tooth profile tolerance</div>
+        <div class="arc-meta-item"><b>~60 HRC</b>case hardness</div>
+        <div class="arc-meta-item"><b>AU · NZ · US</b>shipped to the grid</div>
+      </div>
+      <div class="arc-cta-row">
+        <a href="#contact" class="arc-btn arc-btn-primary">Request a quote</a>
+        <a href="#ratios" class="arc-btn arc-btn-ghost">See ratio range</a>
+      </div>
+    </div>
+
+    <div class="arc-gear-wrap">
+      <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(170,170)">
+          <!-- 16 teeth, each a small trapezoid rotated around the hub -->
+          <g class="arc-gear-fill">
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(0)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(22.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(45)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(67.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(90)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(112.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(135)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(157.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(180)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(202.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(225)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(247.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(270)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(292.5)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(315)"/>
+            <path d="M -7,-118 L -5,-132 L 5,-132 L 7,-118 Z" transform="rotate(337.5)"/>
+          </g>
+          <circle r="118" class="arc-gear-fill"/>
+          <circle r="86" class="arc-gear-fill" stroke-dasharray="2 5"/>
+          <circle r="30" class="arc-gear-fill"/>
+          <circle r="8" class="arc-gear-accent"/>
+        </g>
+
+        <!-- dimension leaders -->
+        <line x1="170" y1="38" x2="170" y2="14" class="arc-dim-line"/>
+        <line x1="130" y1="14" x2="210" y2="14" class="arc-dim-line"/>
+        <text x="212" y="18" class="arc-dim-text">OD 132mm</text>
+
+        <line x1="256" y1="170" x2="300" y2="170" class="arc-dim-line"/>
+        <text x="302" y="174" class="arc-dim-text">PCD 86mm</text>
+
+        <line x1="170" y1="200" x2="170" y2="250" class="arc-dim-line"/>
+        <text x="176" y="256" class="arc-dim-text">16T · MOD 1.5</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="arc-section">
+    <div class="arc-inner">
+      <div class="arc-eyebrow-row">
+        <span class="arc-tag">Process</span>
+        <div class="arc-rule"></div>
+      </div>
+      <h2 style="font-size:clamp(30px,4vw,44px);">From billet to gearbox</h2>
+      <p class="arc-lede" style="margin-top:14px;">
+        Every set goes through the same four stages, whether it's a one-off
+        replacement or a full ratio kit.
+      </p>
+
+      <div class="arc-process-grid">
+        <div class="arc-process-cell">
+          <div class="arc-step-no">01</div>
+          <h3>Material</h3>
+          <p>Case-hardening alloy steel, sourced and certified to spec before it reaches the machine.</p>
+        </div>
+        <div class="arc-process-cell">
+          <div class="arc-step-no">02</div>
+          <h3>Hobbing</h3>
+          <p>CNC gear hobbing cuts the tooth profile to your module and ratio, checked against print.</p>
+        </div>
+        <div class="arc-process-cell">
+          <div class="arc-step-no">03</div>
+          <h3>Heat treat</h3>
+          <p>Case-hardened for a wear-resistant surface without sacrificing core toughness.</p>
+        </div>
+        <div class="arc-process-cell">
+          <div class="arc-step-no">04</div>
+          <h3>Finish &amp; inspect</h3>
+          <p>Ground faces, deburred edges, and a final dimensional check before it's boxed.</p>
+        </div>
+        <div class="arc-process-cell">
+          <div class="arc-step-no">05</div>
+          <h3>Match &amp; pair</h3>
+          <p>Gear pairs are matched for backlash and running clearance before they ship together.</p>
+        </div>
+        <div class="arc-process-cell">
+          <div class="arc-step-no">06</div>
+          <h3>Ship</h3>
+          <p>Packed to travel — Australia and New Zealand by road, further afield by air freight.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC / RATIOS -->
+  <section class="arc-section arc-paper" id="ratios">
+    <div class="arc-inner">
+      <div class="arc-eyebrow-row">
+        <span class="arc-tag">Ratio range</span>
+        <div class="arc-rule"></div>
+      </div>
+      <h2 style="font-size:clamp(30px,4vw,44px);">Built to your final drive</h2>
+      <p class="arc-lede" style="margin-top:14px;">
+        A sample of the spread available across common Formula Ford gearbox
+        layouts. Exact ratios are cut to your gearbox and track — get in touch
+        with your target final drive and we'll work out the pair.
+      </p>
+
+      <table class="arc-spec">
+        <thead>
+          <tr><th>Gear pair</th><th>Teeth (drive / driven)</th><th>Ratio</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td class="mono">14 / 34</td><td class="mono">2.43 : 1</td><td>Tight, technical circuits</td></tr>
+          <tr><td>2nd</td><td class="mono">17 / 31</td><td class="mono">1.82 : 1</td><td>Street circuits</td></tr>
+          <tr><td>3rd</td><td class="mono">20 / 28</td><td class="mono">1.40 : 1</td><td>Mixed-speed circuits</td></tr>
+          <tr><td>4th</td><td class="mono">23 / 25</td><td class="mono">1.09 : 1</td><td>Fast, flowing circuits</td></tr>
+        </tbody>
+      </table>
+      <p class="arc-spec-note">Illustrative ratio spread — final tooth counts are confirmed against your gearbox and gearing chart before we cut anything.</p>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="arc-section">
+    <div class="arc-inner">
+      <div class="arc-eyebrow-row">
+        <span class="arc-tag">Reach</span>
+        <div class="arc-rule"></div>
+      </div>
+      <h2 style="font-size:clamp(30px,4vw,44px);">Where it's raced</h2>
+
+      <div class="arc-markets">
+        <div class="arc-market">
+          <h3>Australia</h3>
+          <p>Home base. Direct pickup or fast local courier from Melbourne.</p>
+        </div>
+        <div class="arc-market">
+          <h3>New Zealand</h3>
+          <p>Ratio kits shipped ahead of the season, sized to your race calendar.</p>
+        </div>
+        <div class="arc-market">
+          <h3>United States</h3>
+          <p>Export orders for Formula Ford grids running imperial or metric gearboxes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="arc-section arc-contact" id="contact" style="border-bottom:none;">
+    <div class="arc-inner">
+      <div class="arc-eyebrow-row">
+        <span class="arc-tag">Get a quote</span>
+        <div class="arc-rule"></div>
+      </div>
+      <h2>Tell us your ratio.<br>We'll cut it.</h2>
+      <p class="arc-lede" style="margin-top:14px;">
+        Send your gearbox model, current ratios and target final drive —
+        most quotes go out within two business days.
+      </p>
+      <div class="arc-contact-row">
+        <div class="arc-contact-item">
+          <span class="label">Email</span>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </div>
+        <div class="arc-contact-item">
+          <span class="label">Phone</span>
+          <a href="tel:+61000000000">+61 00 0000 0000</a>
+        </div>
+        <div class="arc-contact-item">
+          <span class="label">Based in</span>
+          <span>Melbourne, Australia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="arc-foot">
+    <span>Apex Ratio Co. — precision gear ratios for Formula Ford.</span>
+    <span>&copy; 2026</span>
+  </div>
+
+</div>
